@@ -1,0 +1,110 @@
+* {
+    font-family: "Alata", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+
+.button {
+    display: flex;
+    width: auto;
+}
+
+button {
+    margin: 4px;
+    padding: 2px 8px 2px 8px;
+    height: 28px;
+    background-color: maroon;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.calender {
+    height: 50vh;
+}
+
+:host ::ng-deep {
+    .fc .fc-dayGridMonth-view .fc-daygrid-day.fc-day-today {
+        background: #f3d6d2;
+    }
+}
+
+::ng-deep .fc-header-toolbar {
+    color: blue;
+}
+
+::ng-deep .fc-toolbar {
+    min-width: 20vh;
+}
+
+::ng-deep .fc-toolbar-title {
+    min-width: 5vh;
+    color : black;
+}
+::ng-deep a {
+    text-decoration: none;
+}
+
+::ng-deep .fc-event-title {
+    font-weight: bold;
+}
+
+::ng-deep .fc .fc-button-primary {
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color: #3c81e7 !important;
+    border-color: #5ba4e7 !important;
+}
+::ng-deep .fc .fc-daygrid-day-top {
+    align-items: center;
+    justify-content: center;
+}
+.fc-header-toolbar-button {
+    width: 50px; /* Adjust as needed */
+}
+
+/* Media query for mobile screens */
+ @media (max-width: 768px) {
+     .fc-header-toolbar .fc-toolbar {
+         width: 10px;
+     }
+     .fc-header-toolbar-button {
+         width: 30px; 
+     }
+ }
+
+ @media (max-width: 767.98px) {
+     .fc .fc-toolbar.fc-header-toolbar {
+         display: block;
+         text-align: center;
+     }
+
+     .fc-header-toolbar .fc-toolbar-chunk {
+         display: block;
+     }
+ }
+.fc-header-left, fc-header-center, fc-header-right {
+    width: 100%;
+    display: block;
+}
+.fc-toolbar {
+    .fc-center h2 {
+        font-size: 1.25em
+    }
+    display: block;
+    text-align: center;
+    @media (min-width: 600px) {
+        display: flex !important;
+    }
+}
+@media (max-width: 768px){
+    .fc-toolbar .fc-left, .fc-toolbar .fc-center, .fc-toolbar .fc-right {
+        display: inline-block;
+        float: none !important;
+    }
+}

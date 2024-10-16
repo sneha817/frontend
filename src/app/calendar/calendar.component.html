@@ -1,0 +1,17 @@
+<div class="button">
+    <button (click)="setAvailableSlots()">Set Availability</button>
+    <button>Create Group Session</button>
+    <button (click)="setBlock()">Set Blockout Day</button>
+  </div>
+  
+  <div class="container-fluid">
+    <div class="row">
+      <ng-template #fullCalendarTemplate>
+        <full-calendar #calendar [options]="calendarOptions"></full-calendar>
+      </ng-template>
+      <div class="col-sm-12 col-md-8" *ngIf="isMobile; else fullCalendarTemplate">
+        <full-calendar #calendar [options]="calendarOptions" [style.height.px]="500"></full-calendar>
+      </div>
+    </div>
+  </div>
+  

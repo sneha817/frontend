@@ -1,0 +1,49 @@
+<div class="login-container">
+
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+    <div class="title">
+
+      <h1 style="font-family: Vollkorn SC; font-size: 64px;">
+        Digital Concierge
+      </h1>
+    </div>
+    <br>
+    <br>
+    <h2>Login</h2>
+
+    <div class="form-group">
+      <!-- <label for="email">Email</label> -->
+      <input type="email" id="email" formControlName="email" class="form-control" placeholder="Enter Email" />
+      <div *ngIf="submitted && getControl('email')?.errors" class="error">
+        <div *ngIf="getControl('email')?.errors?.['required']" style="color: red;">Email is required</div>
+        <div *ngIf="getControl('email')?.errors?.['email']" style="color: red;">Invalid email format</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <!-- <label for="password">Password</label> -->
+      <input type="password" id="password" formControlName="password" class="form-control"
+        placeholder="Enter Password" />
+      <div *ngIf="submitted && getControl('password')?.errors" class="error">
+        <div *ngIf="getControl('password')?.errors?.['required']" style="color: red;">Password is required</div>
+        <div *ngIf="getControl('password')?.errors?.['minlength']" style="color: red;">Password must be at least 6
+          characters</div>
+      </div>
+    </div>
+    <br>
+    <div class="login-button" style="display: flex; flex-direction: row; align-items: center; gap: 10px;">
+
+
+      <button type="submit" class="btn btn-primary">Login</button>
+      <button type="button" class="btn btn-primary2" (click)="register()">Sign Up</button>
+    </div>
+
+
+  </form>
+
+  <div class="img">
+    <img src="./../../assets/Vector Smart Object (Double Click to Edit) 2.png" />
+  </div>
+</div>

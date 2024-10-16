@@ -1,0 +1,41 @@
+<div class="container p-5" style="height: 100vh; width: 900px;">
+
+  <div class="row">
+
+    <div class="col-12" >
+      <div class="row">
+        <div class="column"></div>
+        <div class="column column-50" style="height: 80vh; overflow-y: auto;">
+          <ng-container *ngFor="let message of messages">
+            <div class="message-container" [ngClass]="{ 'from': message.author === 'bot', 'to': message.author === 'user' }">
+              <div class="message">
+                {{ message.content }}
+              </div>
+            </div>
+          </ng-container>
+        </div>
+
+        <div class="chatinput">
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm" *ngIf="messages.length == 0; else dialogInfo"
+              for="nameField">Chat Bot</span>
+            <input [(ngModel)]="value" (keyup.enter)="sendMessage()" type="text" class="form-control"
+              placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button (click)="sendMessage()" class="btn btn-outline-primary" type="button" id="button-addon2">Send</button>
+            <button (click)="clearMessages()" class="btn btn-outline-danger" type="button">Clear</button>
+
+          </div>
+          <ng-template #dialogInfo>
+            <span class="input-group-text" id="inputGroup-sizing-sm" for="nameField">Total messages: {{ messages.length
+              }}</span>
+          </ng-template>
+        </div>
+        <div class="column"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

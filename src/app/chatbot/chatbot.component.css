@@ -1,0 +1,68 @@
+* {
+    font-family: "Alata", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+.message-container {
+    display: flex;
+    /* Use flexbox for alignment */
+    margin-bottom: 5px;
+    /* Space between messages */
+    width: 100%;
+    /* Ensure the container takes full width */
+}
+
+.to {
+    justify-content: flex-start;
+    /* Align user messages to the right */
+}
+
+.from {
+    justify-content: flex-end;
+    /* Align bot messages to the left */
+}
+
+.message {
+    max-width: 70%;
+    /* Limit width for better appearance */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Background colors for messages */
+.from .message {
+    background-color: #E3E3E3;
+    /* Light gray for bot messages */
+}
+
+.to .message {
+    background-color: #49BFFE;
+    /* Blue for user messages */
+    color: white;
+    /* Text color for user messages */
+}
+
+/* For WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 4px;  /* Set scrollbar width */
+    height: 4px; /* Set scrollbar height for horizontal scroll */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #888; /* Scrollbar color */
+    border-radius: 10px;     /* Make scrollbar edges round */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Background track color */
+  }
+  
+  /* For Firefox */
+  html {
+    scrollbar-width: thin;       /* Make the scrollbar thin */
+    scrollbar-color: #888 #f1f1f1; /* Thumb and track color */
+  }
+  
